@@ -1,0 +1,137 @@
+body {
+  background: rgb(108, 183, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(108, 183, 240, 1) 0%,
+    rgba(85, 144, 189, 1) 54%,
+    rgba(108, 183, 240, 1) 100%
+  );
+  font-family: 'Oswald', sans-serif;
+  color: #333; /* Color de texto más oscuro para contraste */
+  text-align: center;
+}
+
+/* Estilo para encabezados */
+h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Contenedor principal */
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Estilo para las tarjetas de Pokémon */
+.pokemon-block,
+.pokemon-block-back {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación en hover */
+.pokemon-block:hover,
+.pokemon-block-back:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del fondo (blob) */
+.img-container {
+  background-image: url('./blob.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Estilo para el nombre del Pokémon */
+.name {
+  color: #555;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+/* Estilo para las estadísticas */
+.stat-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  text-align: left;
+  gap: 10px;
+}
+
+/* Paginación */
+.pagination {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Tarjeta estilo flip */
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .card-container {
+  transform: rotateY(180deg);
+}
+
+.pokemon-block-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ajustes adicionales de colores */
+.title {
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+}
+
+p {
+  color: #666; /* Texto más claro */
+}
+
+/* Botones o links */
+a.btn {
+  display: inline-block;
+  background-color: #ff6b6b; /* Coral/Naranja suave */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+a.btn:hover {
+  background-color: #ff5252;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .pokemon-container {
+    grid-template-columns: 1fr;
+  }
+}
